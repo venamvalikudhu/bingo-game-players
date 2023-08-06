@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@300&display=swap');
+
+*{
+	width: 100%;
+}
+
+main {
+	font-family: 'Handjet';
+	color: white;
+	height: 100rem;
+	background-color: #333;
+}
+
+.overall-home-page{
+	height: 55rem;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+}
+
+.main-screen-1 {
+	padding-top: 40px;
+	margin-right: 8px;
+	width: 45%;
+	border: 5px solid white;
+	border-radius: 15px;
+}
+
+.main-screen-2 {
+	border: 5px solid white;
+	border-radius: 15px;
+	align-items: center;
+	display: inline-block;
+	margin-right: 5px;
+}
+
+.main-screen-2>h2{
+    border-bottom: 5px dotted white;
+    width: 35%;
+    display: inline-block;
+}
+
+.main-screen-1>h1{
+	font-size: 5rem;
+}
+
+.main-screen-1>h2{
+	width: 50%;
+	font-size: 3rem;
+	padding-right: 3rem;
+	float: right;
+	text-align: right;
+	margin-top: 0px;
+	border-bottom: 2px dotted white;
+}
+
+.main-screen-1>h3{
+	font-size: 2.1rem;
+	padding-top: 6rem;
+	text-align: center;
+	margin-top: 2.5rem;
+}
+
+.main-screen-1 h3>span{
+	color: yellow;
+	font-weight: bold;
+}
+
+.play-shuffle{
+	border: 2px dotted white;
+	margin-top: 10px;
+	border-radius: 10px;
+	width: 30%;
+	font-size: 1.8rem;
+	font-style: normal;
+	background: transparent;
+		font-weight: bold;
+}
+
+.play-shuffle:hover{
+	color: yellow;
+    cursor: pointer;
+}
+
+.bingo-overall-board{
+	margin-top: 2rem;
+	font-weight: bold;
+}
+
+.count{
+	margin: 5px;
+	border: 2px dotted white;	
+	width: 18%;
+	padding: 10px;
+	border-radius: 10px;
+	display: inline-block;
+	position: relative;
+	font-size: 3rem;
+	font-weight: bold;
+	background: transparent;
+	cursor: pointer;
+}
+
+.plane-loader{
+	margin-top: 2rem;
+	display: flex;
+}
+
+path{
+	width: 100%;
+	margin-top: 2rem;
+	rotate: 90deg;
+}
+
+.current-number-value{
+	font-weight: bold;
+	font-size: 6rem;
+}
+
+.current-number{
+	margin-top: 10px;
+}
