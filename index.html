@@ -1,123 +1,451 @@
-<!DOCTYPE html>
-<html>
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@300&display=swap');
 
-<head>
-<title>Bingo-Anniversary'23</title>
+*{
+	width: 100%;
+}
 
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+main {
+	font-family: 'Handjet';
+	color: white;
+	height: 100rem;
+	background-color: #333;
+}
 
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta charset= "UTF-8">
-</head>
+.overall-home-page{
+	height: 55rem;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+}
 
-<body>
-<main>
-<div class="overall-home-page">
-<div class="main-screen-1" id="screen-1">
-<h1>Welcome to BINGO's third Anniversary !!!! </h1>
-<h2>-->Let's BINGO !!</h2>
-<h3> Click on the <span>"GENERATE CARD"</span> button to generate your BINGO CARD</h3>
-<button class="play-shuffle" id="shuffle" onclick="shuffleForNextNumber()"><span>GENERATE CARD</span></button> 
-<div style="display:none;color:yellow" class="generated-block" id="generated-block-text">
-<h3 style="font-weight:bold;font-size:3rem;"> Your BINGO card is Generated !!</h3>
-</div>
-<div class="loader" id="loader-display" style="display:none"></div>
-</div>
+.main-screen-1 {
+	padding-top: 40px;
+	margin-right: 8px;
+	width: 45%;
+	border: 5px solid white;
+	border-radius: 15px;
+}
 
-<div class="main-screen-2" id="screen-1">
-<h1>Previous Closed Number is : <span style="color:yellow" id="last-number">0</span></h1>
-<h2>YOUR BINGO CARD</h2>
+.main-screen-2 {
+	border: 5px solid white;
+	border-radius: 15px;
+	align-items: center;
+	display: inline-block;
+	margin-right: 5px;
+}
 
-<div class="bingo-overall-board">
-<button class="count" onclick="disableElement(0)" id="count0">
-<span>*</span>
-</button>
-<button class="count" onclick="disableElement(1)" id="count1">
-<span>*</span>
-</button>
-<button class="count" onclick="disableElement(2)" id="count2">
-<span>*</span>
-</button>
-<button class="count" onclick="disableElement(3)" id="count3">
-<span>*</span>
-</button>
-<button class="count" onclick="disableElement(4)" id="count4">
-<span>*</span>
-</button>
-<button class="count" onclick="disableElement(5)" id="count5">
-<span>*</span>
-</button>
-<button class="count" onclick="disableElement(6)" id="count6">
-<span>*</span>
-</button>
-<button class="count" onclick="disableElement(7)" id="count7">
-<span>*</span>
-</button>
-<button class="count" onclick="disableElement(8)" id="count8">
-<span>*</span>
-</button>
-<button class="count" onclick="disableElement(9)" id="count9">
-<span>*</span>
-</button>
-<button class="count" onclick="disableElement(10)" id="count10">
-<span>*</span>
-</button>
-<button class="count" onclick="disableElement(11)" id="count11">
-<span>*</span>
-</button>
-<button class="count" onclick="disableElement(12)" id="count12">
-<span>*</span>
-</button>
-<button class="count" onclick="disableElement(13)" id="count13">
-<span>*</span>
-</button>
-<button class="count" onclick="disableElement(14)" id="count14">
-<span>*</span>
-</button>
-<button class="count" onclick="disableElement(15)" id="count15">
-<span>*</span>
-</button>
-<button class="count" onclick="disableElement(16)" id="count16">
-<span>*</span>
-</button>
-<button class="count" onclick="disableElement(17)" id="count17">
-<span>*</span>
-</button>
-<button class="count" onclick="disableElement(18)" id="count18">
-<span>*</span>
-</button>
-<button class="count" onclick="disableElement(19)" id="count19">
-<span>*</span>
-</button>
-<button class="count" onclick="disableElement(20)" id="count20">
-<span>*</span>
-</button>
-<button class="count" onclick="disableElement(21)" id="count21">
-<span>*</span>
-</button>
-<button class="count" onclick="disableElement(22)" id="count22">
-<span>*</span>
-</button>
-<button class="count" onclick="disableElement(23)" id="count23">
-<span>*</span>
-</button>
-<button class="count" onclick="disableElement(24)" id="count24">
-<span>*</span>
-</button>
-</div>
+.main-screen-2>h2{
+    border-bottom: 5px dotted white;
+    width: 35%;
+    display: inline-block;
+}
 
-</div>
-</main>
+.main-screen-1>h1{
+	font-size: 5rem;
+}
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-<script src="logic.js"></script>
-</body>
+.main-screen-1>h2{
+	width: 50%;
+	font-size: 3rem;
+	padding-right: 3rem;
+	float: right;
+	text-align: right;
+	margin-top: 0px;
+	border-bottom: 2px dotted white;
+}
 
+.main-screen-1>h3{
+	font-size: 2.1rem;
+	padding-top: 6rem;
+	text-align: center;
+	margin-top: 2.5rem;
+}
 
+.main-screen-1 h3>span{
+	color: yellow;
+	font-weight: bold;
+}
 
-</html>
+.play-shuffle{
+	border: 2px dotted white;
+	margin-top: 10px;
+	border-radius: 10px;
+	width: 30%;
+	font-size: 1.8rem;
+	font-style: normal;
+	background: transparent;
+		font-weight: bold;
+}
+
+.play-shuffle:hover{
+	color: yellow;
+    cursor: pointer;
+}
+
+.bingo-overall-board{
+	margin-top: 2rem;
+	font-weight: bold;
+}
+
+.count{
+	margin: 5px;
+	border: 2px dotted white;	
+	width: 18%;
+	padding: 10px;
+	border-radius: 10px;
+	display: inline-block;
+	position: relative;
+	font-size: 3rem;
+	font-weight: bold;
+	background: transparent;
+	cursor: pointer;
+}
+
+.plane-loader{
+	margin-top: 2rem;
+	display: flex;
+}
+
+path{
+	width: 100%;
+	margin-top: 2rem;
+	rotate: 90deg;
+}
+
+.current-number-value{
+	font-weight: bold;
+	font-size: 6rem;
+}
+
+.current-number{
+	margin-top: 10px;
+}
+
+.loader {
+    border: 5px solid #f3f3f3;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+    border-top: 5px solid #555;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+	align-items: center;
+	justify-content: center;
+	margin-left: 16rem;
+    margin-top: 2rem;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media screen and (max-width:1440px)
+{
+	.overall-home-page
+	{
+		height: 85rem;
+		display: flex;
+		justify-content: center;
+		text-align: center;
+	}	
+	.main-screen-1 {
+    padding-top: 40px;
+    margin-right: 8px;
+    margin-left: 1px;
+    width: 45%;
+    border: 5px solid white;
+    border-radius: 15px;
+	}
+	.main-screen-1>h2
+	{
+	width: 80%;
+	font-size: 3rem;
+	padding-right: 1rem;
+	float: right;
+	text-align: right;
+	margin-top: 0px;
+	border-bottom: 2px dotted white;
+	}
+	
+	.play-shuffle {
+    border: 2px dotted white;
+    margin-top: 10px;
+    border-radius: 10px;
+    width: 50%;
+    font-size: 1.8rem;
+    font-style: normal;
+    background: transparent;
+    font-weight: bold;
+	}
+	
+	.main-screen-1>h1 
+	{
+    font-size: 4rem;
+	}
+	
+	.loader {
+    border: 5px solid #f3f3f3;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+    border-top: 5px solid #555;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20rem;
+    margin-top: 2rem;
+	}
+	
+	.count{
+	margin: 5px;
+	border: 2px dotted white;	
+	width: 18%;
+	padding-left: 7px;
+		padding-right: 10px;
+			padding-top: 10px;
+				padding-bottom: 10px;
+	border-radius: 10px;
+	display: inline-block;
+	position: relative;
+	font-size: 3rem;
+	font-weight: bold;
+	background: transparent;
+	cursor: pointer;
+}
+}
+
+@media screen and (max-width:1024px)
+{
+	.overall-home-page
+	{
+		height: 85rem;
+		display: flex;
+		justify-content: center;
+		text-align: center;
+	}	
+	.main-screen-1 {
+    padding-top: 40px;
+    margin-right: 8px;
+    margin-left: 1px;
+    width: 45%;
+    border: 5px solid white;
+    border-radius: 15px;
+	}
+	.main-screen-1>h2
+	{
+	width: 80%;
+	font-size: 3rem;
+	padding-right: 1rem;
+	float: right;
+	text-align: right;
+	margin-top: 0px;
+	border-bottom: 2px dotted white;
+	}
+	
+	.play-shuffle {
+    border: 2px dotted white;
+    margin-top: 10px;
+    border-radius: 10px;
+    width: 50%;
+    font-size: 1.8rem;
+    font-style: normal;
+    background: transparent;
+    font-weight: bold;
+	}
+	
+	.main-screen-1>h1 
+	{
+    font-size: 4rem;
+	}
+	
+	.loader {
+    border: 5px solid #f3f3f3;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+    border-top: 5px solid #555;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 12rem;
+    margin-top: 2rem;
+	}
+	
+	.count{
+	margin: 5px;
+	border: 2px dotted white;	
+	width: 15%;
+	padding-left: 7px;
+		padding-right: 10px;
+			padding-top: 10px;
+				padding-bottom: 10px;
+	border-radius: 10px;
+	display: inline-block;
+	position: relative;
+	font-size: 3rem;
+	font-weight: bold;
+	background: transparent;
+	cursor: pointer;
+}
+}
+
+@media screen and (max-width:768px)
+{
+	.overall-home-page
+	{
+		height: 85rem;
+		display: flex;
+		justify-content: center;
+		text-align: center;
+	}	
+	.main-screen-1 {
+    padding-top: 40px;
+    margin-right: 8px;
+    margin-left: 1px;
+    width: 45%;
+    border: 5px solid white;
+    border-radius: 15px;
+	}
+	.main-screen-1>h2
+	{
+	width: 80%;
+	font-size: 1.6rem;
+	padding-right: 1rem;
+	float: right;
+	text-align: right;
+	margin-top: 0px;
+	border-bottom: 2px dotted white;
+	}
+	
+	.play-shuffle {
+    border: 2px dotted white;
+    margin-top: 10px;
+    border-radius: 10px;
+    width: 50%;
+    font-size: 1.8rem;
+    font-style: normal;
+    background: transparent;
+    font-weight: bold;
+	}
+	
+	.main-screen-1>h1 
+	{
+    font-size: 4rem;
+	}
+	
+	.loader {
+    border: 5px solid #f3f3f3;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+    border-top: 5px solid #555;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8.5rem;
+    margin-top: 2rem;
+	}
+	
+	.count{
+	margin: 5px;
+	border: 2px dotted white;	
+	width: 15%;
+	padding-left: 7px;
+		padding-right: 10px;
+			padding-top: 10px;
+				padding-bottom: 10px;
+	border-radius: 10px;
+	display: inline-block;
+	position: relative;
+	font-size: 3rem;
+	font-weight: bold;
+	background: transparent;
+	cursor: pointer;
+}
+}
+
+@media screen and (max-width:476px)
+{
+	.overall-home-page
+	{
+		height: 85rem;
+		display: flex;
+		justify-content: center;
+		text-align: center;
+	}	
+	.main-screen-1 {
+    padding-top: 40px;
+    margin-right: 8px;
+    margin-left: 1px;
+    width: 45%;
+    border: 5px solid white;
+    border-radius: 15px;
+	}
+	.main-screen-1>h2
+	{
+	width: 90%;
+	font-size: 1.6rem;
+	padding-right: 1rem;
+	float: right;
+	text-align: right;
+	margin-top: 0px;
+	border-bottom: 2px dotted white;
+	}
+	
+	.play-shuffle {
+    border: 2px dotted white;
+    margin-top: 10px;
+    border-radius: 10px;
+    width: 60%;
+    font-size: 1.8rem;
+    font-style: normal;
+    background: transparent;
+    font-weight: bold;
+	}
+	
+	.main-screen-1>h1 
+	{
+    font-size: 3rem;
+	}
+	
+	.loader {
+    border: 5px solid #f3f3f3;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+    border-top: 5px solid #555;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 3.7rem;
+    margin-top: 2rem;
+	}
+	
+	.count{
+	margin: 5px;
+	border: 2px dotted white;	
+	width: 12%;
+	padding-left: 2px;
+		padding-right: 10px;
+			padding-top: 10px;
+				padding-bottom: 10px;
+	border-radius: 10px;
+	display: inline-block;
+	position: relative;
+	font-size: 1.5rem;
+	font-weight: bold;
+	background: transparent;
+	cursor: pointer;
+}
+}
