@@ -17,7 +17,7 @@ function shuffleForNextNumber()
 {
 clearInterval(timerInterval);
 
-document.getElementById("plane-loader-area").animate(plane_loader_anim,plane_loader);
+document.getElementById("loader-display").style.display = 'flex'
 generateRandomNumbers();
 
 timerInterval = setInterval(() => {
@@ -28,7 +28,7 @@ document.getElementById(text).innerText = numbergenerated[i];
 }
 document.getElementById("shuffle").disabled= true;
 document.getElementById("shuffle").style.display='none'
-document.getElementById("plane-loader-area").style.display='none'
+document.getElementById("loader-display").style.display = 'none'
 document.getElementById("generated-block-text").style.display='flex'
 },3000);
 }
