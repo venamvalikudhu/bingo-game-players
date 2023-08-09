@@ -51,6 +51,7 @@ if((document.getElementById(text1).style.backgroundColor) === "lightgreen" && re
 	document.getElementById(text1).style.backgroundColor=''
 	document.getElementById(text1).style.color='white'
 	retryTime++;
+	document.getElementById("retry-count").innerHTML=retryTime;
 	return;
 }
 else if (document.getElementById(text1).style.backgroundColor === "" && retryTime<3)
