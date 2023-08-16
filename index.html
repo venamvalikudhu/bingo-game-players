@@ -26,6 +26,17 @@
 <div class="loader" id="loader-display" style="display:none"></div>
 </div>
 
+ <!-- creating a modal for when quiz ends -->
+        <div class="modal-container" id="score-modal">
+            <div class="modal-content-container">
+                <h1>Congratulations, BINGO !!!!</h1>
+							<div class="modal-button-container">
+                    <button onclick="CloseMessage()">Close</button>
+               </div>
+
+            </div>
+        </div>
+
 <div class="main-screen-2" id="screen-1">
 <h1>Previous Closed Number is : <span style="color:yellow" id="last-number">0</span></h1>
 <h3>Retry count: <span class="rety-count" id="retry-count">0</span></h3>
