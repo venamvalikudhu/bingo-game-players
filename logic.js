@@ -13,6 +13,7 @@ var timerInterval = '';
 let numbergenerated = [];
 var retryTime = 0;
 
+
 function shuffleForNextNumber()
 {
 clearInterval(timerInterval);
@@ -59,16 +60,40 @@ else if (document.getElementById(text1).style.backgroundColor === "" && retryTim
 document.getElementById(text1).style.backgroundColor='lightgreen'
 document.getElementById(text1).style.color='black'
 document.getElementById("last-number").innerHTML= document.getElementById(text1).innerText;
+if(checkForCompletion() === 0)
+{
+	    document.getElementById('score-modal').style.display = "flex"	
+}
 }
 else if(retryTime>=3 && document.getElementById(text1).style.backgroundColor === "")
 {
 document.getElementById(text1).style.backgroundColor='lightgreen'
 document.getElementById(text1).style.color='black'
 document.getElementById("last-number").innerHTML= document.getElementById(text1).innerText;
+if(checkForCompletion() === 0)
+{
+	    document.getElementById('score-modal').style.display = "flex"
+}
 }
 else
 {
 return;
 }
 }
+
+function checkForCompletion()
+{
+	var items = [];
+	for(var i=0;i<document.getElementsByClassName('count').length;i++)
+	{
+		items.push(document.getElementsByClassName('count')[i].style.backgroundColor);
+	}
+	return items.filter(x => x === "").length;
+}
+
+function CloseMessage()
+{
+	document.getElementById('score-modal').style.display = "none";
+}
+
 
